@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: moodle-db
+    environment:
+      MARIADB_ROOT_PASSWORD: root123
+      MARIADB_DATABASE: bitnami_moodle
+      MARIADB_USER: bn_moodle
+      MARIADB_PASSWORD: moodle123
+    volumes:
+      - moodle_db_data:/var/lib/mysql
+    restart: unless-stopped
+
+  moodle:
+    image: bitnamilegacy/moodle:latest
+    container_name: moodle-app
+    ports:
+      - "8082:8080"
+      - "8443:8443"
+    environment:
+      - MOODLE_DATABASE_HOST=mariadb
+      - MOODLE_DATABASE_PORT_NUMBER=3306
+      - MOODLE_DATABASE_USER=bn_moodle
+      - MOODLE_DATABASE_PASSWORD=moodle123
+      - MOODLE_DATABASE_NAME=bitnami_moodle
+      - MOODLE_USERNAME=admin
+      - MOODLE_PASSWORD=Admin123!
+      - MOODLE_EMAIL=admin@example.com
+      - MOODLE_SITE_NAME=Mini Cloud LMS
+    volumes:
+      - moodle_data:/bitnami/moodle
+      - moodle_datadir:/bitnami/moodledata
+    depends_on:
+      - mariadb
+    restart: unless-stopped
+
+volumes:
+  moodle_db_data:
+  moodle_data:
+  moodle_datadir:
