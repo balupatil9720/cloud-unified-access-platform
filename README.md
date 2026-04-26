@@ -85,7 +85,7 @@ User → Public EC2 (Nginx + Node.js Auth) → Private EC2 (Docker Containers)
 ### 1. Clone Repo
 
 ```bash
-git clone https://github.com/your-username/mini-cloud-platform.git
+git clone https://https://github.com/balupatil9720/cloud-unified-access-platform.git
 cd mini-cloud-platform
 ```
 
@@ -167,11 +167,11 @@ lukptr/erpnext7
 
 ### 🏢 Odoo
 
-![Odoo](./screenshots/odoo.png)
+![Odoo](./screenshots/oodo.png)
 
 ### 🧠 ERPNext
 
-![ERPNext](./screenshots/erpnext.png)
+![ERPNext](./screenshots/erp.png)
 
 ---
 
