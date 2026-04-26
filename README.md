@@ -20,7 +20,7 @@ A cloud-based platform that provides **secure centralized access** to multiple e
 
 ## 🏗️ Architecture
 
-<img src="./architecture.png" width="500"  height="500" />
+<img src="./architecture.png" width="300"  height="300" />
 
 ### Flow:
 
